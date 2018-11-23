@@ -37,18 +37,18 @@ axios(
 ```
 
 ## Remote Extension uploads to OCCS Admin
-Use [the API](https://ccadmin-test-zbba.oracleoutsourcing.com/api/index.html?startCatalog=ccadmin#/Files) to upload and install your extension(zip) to OCC
+Use [the API](https://docs.oracle.com/en/cloud/saas/commerce-cloud/cxocc/ "Oracle Commerce Cloud REST API") to upload and install your extension(zip) to OCC
 
 ### Steps
-1. Start the [file upload](https://ccadmin-test-zbba.oracleoutsourcing.com/api/index.html?startCatalog=ccadmin#/Files/startFileUpload "Start File Upload").  This will tell OCCS that you want to send it a file and it will return you a token you can use in the next step.   
-If you are submitting via multipart/form you will need to use the [doFileUploadMultipart](https://ccadmin-test-zbba.oracleoutsourcing.com/api/index.html?startCatalog=ccadmin#/Files/doFileUploadMultipart) to generate the token
+1. Start the [file upload](https://docs.oracle.com/en/cloud/saas/commerce-cloud/cxocc/op-ccadmin-v1-files-put.html "Start File Upload").  This will tell OCCS that you want to send it a file and it will return you a token you can use in the next step.   
+If you are submitting via multipart/form you will need to use the [doFileUploadMultipart](https://docs.oracle.com/en/cloud/saas/commerce-cloud/cxocc/op-ccadmin-v1-files-post.html) to generate the token
 
-2. Begin a [segmentFileUpload](https://ccadmin-test-zbba.oracleoutsourcing.com/api/index.html?startCatalog=ccadmin#/Files/doFileSegmentUpload File Segment Upload) using the token you received in the previous step.
+2. Begin a [segmentFileUpload](https://docs.oracle.com/en/cloud/saas/commerce-cloud/cxocc/op-ccadmin-v1-files-id-post.html "File Segment Upload") using the token you received in the previous step.
 In your request client add the following query parameters:
 ```
 ?changeContext=designStudio
 ```
 
-3.
+3.  Create the [extension](https://docs.oracle.com/en/cloud/saas/commerce-cloud/cxocc/op-ccadmin-v1-extensions-post.html "create extension").
 
 
