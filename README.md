@@ -1,4 +1,4 @@
-# occ-generate-extensions
+# occ-install-extensions
 (examples coming soon)
 
 ## Remote ExtensionID Generation:
@@ -9,6 +9,8 @@ The admin and the ccdebug use [/applicationsId](https://ccadmin-test-zbba.oracle
 
 The following uses [POST /extensions/id](https://ccadmin-test-zbba.oracleoutsourcing.com/api/index.html?startCatalog=ccadmin#/ "create extension") and also works.
 
+### Example 
+(See code for working example)
 This Node example uses [axios](https://www.npmjs.com/package/axios) HTTP client.
 ```
 
@@ -35,4 +37,18 @@ axios(
 ```
 
 ## Remote Extension uploads to OCCS Admin
-(example coming soon)
+Use [the API](https://ccadmin-test-zbba.oracleoutsourcing.com/api/index.html?startCatalog=ccadmin#/Files) to upload and install your extension(zip) to OCC
+
+### Steps
+1. Start the [file upload](https://ccadmin-test-zbba.oracleoutsourcing.com/api/index.html?startCatalog=ccadmin#/Files/startFileUpload "Start File Upload").  This will tell OCCS that you want to send it a file and it will return you a token you can use in the next step.   
+If you are submitting via multipart/form you will need to use the [doFileUploadMultipart](https://ccadmin-test-zbba.oracleoutsourcing.com/api/index.html?startCatalog=ccadmin#/Files/doFileUploadMultipart) to generate the token
+
+2. Begin a [segmentFileUpload](https://ccadmin-test-zbba.oracleoutsourcing.com/api/index.html?startCatalog=ccadmin#/Files/doFileSegmentUpload File Segment Upload) using the token you received in the previous step.
+In your request client add the following query parameters:
+```
+?changeContext=designStudio
+```
+
+3.
+
+
