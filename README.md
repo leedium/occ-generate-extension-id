@@ -36,3 +36,13 @@ axios(
 
 ## Remote Extension uploads to OCCS Admin
 (example coming soon)
+
+
+## Remote Extension deactivate (needed before uninstall / removal ) 
+In order to remove an extension you must first deactivate it.  
+Using the Api use the following endpoint with the following payload.
+```
+ method: POST
+ url: /ccadminui/v1/extensions/{extensionId}
+ body (json): {"op":"deactivate"}
+```
